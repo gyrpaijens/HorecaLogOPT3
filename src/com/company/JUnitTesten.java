@@ -44,7 +44,18 @@ public class JUnitTesten
         Account actueel = AccountMethoden.logIn("gyr","foutwachtwoord", accounts );
         Assert.assertNull(actueel);
     }
-    // 5e rij MC/DC
+    // 4e rij MC/DC
+    @Test
+    public void testLogin()
+    {
+        ArrayList<Account> accounts = new ArrayList<Account>();
+        account.ingelogd = true;
+        accounts.add(account);
+        Account verwacht = account;
+        Account actueel = AccountMethoden.logIn("nietgyr","foutwachtwoord", accounts );
+        Assert.assertNull(actueel);
+    }
+    //5e rij MC/DC
     @Test
     public void testLogin()
     {
@@ -60,9 +71,9 @@ public class JUnitTesten
     public void testLogin()
     {
         ArrayList<Account> accounts = new ArrayList<Account>();
-        account.ingelogd = false;
+        account.ingelogd = true;
         accounts.add(account);
-        Account actueel = AccountMethoden.logIn("fout","foutwachtwoord", accounts );
+        Account actueel = AccountMethoden.logIn("nietgyr","foutwachtwoord", accounts );
         Assert.assertNull(verwacht);
     }
 

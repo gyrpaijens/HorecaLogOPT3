@@ -4,17 +4,13 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
-
-import static org.junit.Assert.*;
-
 public class JUnitTesten
 {
     Account account = new Account("gyr","wachtwoord","test");
 
     // 1e rij MC/DC
     @Test
-    public void testLogin()
+    public void testLogin1()
     {
         ArrayList<Account> accounts = new ArrayList<Account>();
         account.ingelogd = true;
@@ -25,7 +21,7 @@ public class JUnitTesten
     }
     // 2e rij MC/DC
     @Test
-    public void testLogin()
+    public void testLogin2()
     {
         ArrayList<Account> accounts = new ArrayList<Account>();
         account.ingelogd = false;
@@ -36,17 +32,17 @@ public class JUnitTesten
     }
     // 3e rij MC/DC
     @Test
-    public void testLogin()
+    public void testLogin3()
     {
         ArrayList<Account> accounts = new ArrayList<Account>();
         account.ingelogd = false;
         accounts.add(account);
-        Account actueel = AccountMethoden.logIn("gyr","foutwachtwoord", accounts );
-        Assert.assertNull(actueel);
+        Account actueel1 = AccountMethoden.logIn("gyr","foutiefwachtwoord", accounts );
+        Assert.assertNull(actueel1);
     }
     // 4e rij MC/DC
     @Test
-    public void testLogin()
+    public void testLogin4()
     {
         ArrayList<Account> accounts = new ArrayList<Account>();
         account.ingelogd = true;
@@ -57,7 +53,7 @@ public class JUnitTesten
     }
     //5e rij MC/DC
     @Test
-    public void testLogin()
+    public void testLogin5()
     {
         ArrayList<Account> accounts = new ArrayList<Account>();
         account.ingelogd = true;
@@ -68,17 +64,12 @@ public class JUnitTesten
     }
     //6e rij MC/DC
     @Test
-    public void testLogin()
+    public void testLogin6()
     {
         ArrayList<Account> accounts = new ArrayList<Account>();
         account.ingelogd = true;
         accounts.add(account);
         Account actueel = AccountMethoden.logIn("nietgyr","foutwachtwoord", accounts );
-        Assert.assertNull(verwacht);
+        Assert.assertNull(actueel);
     }
-
-
-
-
-
 }

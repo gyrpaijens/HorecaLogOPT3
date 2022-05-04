@@ -16,16 +16,61 @@ public class JUnitTesten
 
     Account account = new Account("gyr","wachtwoord","test");
 
+    // 1e MC/DC
     @Test
     public void testLogin()
     {
         ArrayList<Account> accounts = new ArrayList<Account>();
+        account.ingelogd = true;
         accounts.add(account);
-
         Account verwacht = account;
-        Account actueel = AccountMethoden.logIn("test","test", accounts );
-
+        Account actueel = AccountMethoden.logIn("gyr","wachtwoord", accounts );
         Assert.assertEquals(verwacht, actueel);
     }
+    // 2e MC/DC
+    @Test
+    public void testLogin()
+    {
+        ArrayList<Account> accounts = new ArrayList<Account>();
+        account.ingelogd = false;
+        accounts.add(account);
+        Account verwacht = account;
+        Account actueel = AccountMethoden.logIn("gyr","wachtwoord", accounts );
+        Assert.assertEquals(verwacht, actueel);
+    }
+    // 3e MC/DC
+    @Test
+    public void testLogin()
+    {
+        ArrayList<Account> accounts = new ArrayList<Account>();
+        account.ingelogd = false;
+        accounts.add(account);
+        Account actueel = AccountMethoden.logIn("gyr","foutwachtwoord", accounts );
+        Assert.assertNull(actueel);
+    }
+    @Test
+    public void testLogin()
+    {
+        ArrayList<Account> accounts = new ArrayList<Account>();
+        account.ingelogd = false;
+        accounts.add(account);
+        Account verwacht = account;
+        Account actueel = AccountMethoden.logIn("gyr","wachtwoord", accounts );
+        Assert.assertEquals(verwacht, actueel);
+    }
+    @Test
+    public void testLogin()
+    {
+        ArrayList<Account> accounts = new ArrayList<Account>();
+        account.ingelogd = true;
+        accounts.add(account);
+        Account verwacht = account;
+        Account actueel = AccountMethoden.logIn("gyr","foutwachtwoord", accounts );
+        Assert.assertEquals(verwacht, actueel);
+    }
+
+
+
+
 
 }

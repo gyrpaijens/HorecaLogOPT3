@@ -10,13 +10,9 @@ import static org.junit.Assert.*;
 
 public class JUnitTesten
 {
-    //om niet de hele tijd calender en account objecten aan te maken heb ik de maar hier gezet.
-    GregorianCalendar calendar = new GregorianCalendar(2022,03,27);
-    GregorianCalendar calendar2 = new GregorianCalendar(2022,03,28);
-
     Account account = new Account("gyr","wachtwoord","test");
 
-    // 1e MC/DC
+    // 1e rij MC/DC
     @Test
     public void testLogin()
     {
@@ -27,7 +23,7 @@ public class JUnitTesten
         Account actueel = AccountMethoden.logIn("gyr","wachtwoord", accounts );
         Assert.assertEquals(verwacht, actueel);
     }
-    // 2e MC/DC
+    // 2e rij MC/DC
     @Test
     public void testLogin()
     {
@@ -38,7 +34,7 @@ public class JUnitTesten
         Account actueel = AccountMethoden.logIn("gyr","wachtwoord", accounts );
         Assert.assertEquals(verwacht, actueel);
     }
-    // 3e MC/DC
+    // 3e rij MC/DC
     @Test
     public void testLogin()
     {
@@ -48,16 +44,7 @@ public class JUnitTesten
         Account actueel = AccountMethoden.logIn("gyr","foutwachtwoord", accounts );
         Assert.assertNull(actueel);
     }
-    @Test
-    public void testLogin()
-    {
-        ArrayList<Account> accounts = new ArrayList<Account>();
-        account.ingelogd = false;
-        accounts.add(account);
-        Account verwacht = account;
-        Account actueel = AccountMethoden.logIn("gyr","wachtwoord", accounts );
-        Assert.assertEquals(verwacht, actueel);
-    }
+    // 5e rij MC/DC
     @Test
     public void testLogin()
     {
@@ -67,6 +54,16 @@ public class JUnitTesten
         Account verwacht = account;
         Account actueel = AccountMethoden.logIn("gyr","foutwachtwoord", accounts );
         Assert.assertEquals(verwacht, actueel);
+    }
+    //6e rij MC/DC
+    @Test
+    public void testLogin()
+    {
+        ArrayList<Account> accounts = new ArrayList<Account>();
+        account.ingelogd = false;
+        accounts.add(account);
+        Account actueel = AccountMethoden.logIn("fout","foutwachtwoord", accounts );
+        Assert.assertNull(verwacht);
     }
 
 

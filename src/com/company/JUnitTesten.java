@@ -72,4 +72,16 @@ public class JUnitTesten
         Account actueel = AccountMethoden.logIn("nietgyr","foutwachtwoord", accounts );
         Assert.assertNull(actueel);
     }
+    @Test
+    public void testRechten()
+    {
+        Assert.assertNull(AccountMethoden.aanmakenRechten(
+                account, "Eigenaar", 4, true, true));
+        Assert.assertNotNull(AccountMethoden.aanmakenRechten(
+                account, "Eigenaar", 30, true, true));
+        Assert.assertNull(AccountMethoden.aanmakenRechten(
+                account, "Medewerker", 12, true, true));
+
+
+    }
 }

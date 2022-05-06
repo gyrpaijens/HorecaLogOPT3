@@ -16,4 +16,33 @@ public class AccountMethoden {
         }
         return null;
     }
+    public static Account aanmakenRechten(Account account, String Soort, int leeftijd, boolean bsn, boolean Geboortedatum)
+    {
+        if(Geboortedatum && bsn)
+        {
+            if(leeftijd > 17 && (Soort.equals("Manager") || Soort.equals("Eigenaar")))
+            {
+                account.setLeeftijd(leeftijd);
+                account.setSoortMedewerker(Soort);
+                return account;
+            }
+
+            if(leeftijd < 18 && ( Soort.equals("Manager") || Soort.equals("Eigenaar")))
+            {
+                return null;
+            }
+            if(Soort.equals("Medewerker"))
+            {
+                account.setLeeftijd(leeftijd);
+                account.setSoortMedewerker(Soort);
+                return account;
+            }
+            return null;
+        }
+
+        else
+            {
+            return null;
+            }
+    }
 }

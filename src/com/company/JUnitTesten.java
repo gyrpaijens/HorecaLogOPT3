@@ -79,8 +79,18 @@ public class JUnitTesten
                 account, "Eigenaar", 4, true, true));
         Assert.assertNotNull(AccountMethoden.aanmakenRechten(
                 account, "Eigenaar", 30, true, true));
+        Assert.assertNotNull(AccountMethoden.aanmakenRechten(
+                account, "Medewerker", 15, true, true));
         Assert.assertNull(AccountMethoden.aanmakenRechten(
                 account, "Medewerker", 12, true, true));
+        Assert.assertNull(AccountMethoden.aanmakenRechten(
+                account, "Medewerker", 15, false, true));
+        Assert.assertNull(AccountMethoden.aanmakenRechten(
+                account, "Manager", 16, true, true));
+        Assert.assertNotNull(AccountMethoden.aanmakenRechten(
+                account, "Manager", 29, true, true));
+        Assert.assertNull(AccountMethoden.aanmakenRechten(
+                account, "Manager", 39, true, false));
 
 
     }

@@ -31,7 +31,7 @@ public class AccountMethoden {
             {
                 return null;
             }
-            if(Soort.equals("Medewerker"))
+            if(leeftijd > 14 && Soort.equals("Medewerker"))
             {
                 account.setLeeftijd(leeftijd);
                 account.setSoortMedewerker(Soort);

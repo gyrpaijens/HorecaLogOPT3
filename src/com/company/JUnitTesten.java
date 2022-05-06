@@ -91,7 +91,5 @@ public class JUnitTesten
                 account, "Manager", 29, true, true));
         Assert.assertNull(AccountMethoden.aanmakenRechten(
                 account, "Manager", 39, true, false));
-
-
     }
 }

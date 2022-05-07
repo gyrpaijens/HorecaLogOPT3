@@ -92,4 +92,16 @@ public class JUnitTesten
         Assert.assertNull(AccountMethoden.aanmakenRechten(
                 account, "Manager", 39, true, false));
     }
+    @Test
+    public void testPostcode()
+    {
+        Assert.assertFalse(AccountMethoden.checkPostcode("261314SG"));
+        Assert.assertTrue(AccountMethoden.checkPostcode("2611AB"));
+
+        Assert.assertFalse(AccountMethoden.checkPostcode("ABCDEF"));
+        Assert.assertTrue(AccountMethoden.checkPostcode("1234AB"));
+
+        Assert.assertFalse(AccountMethoden.checkPostcode("123456"));
+        Assert.assertTrue(AccountMethoden.checkPostcode("5246NL"));
+    }
 }

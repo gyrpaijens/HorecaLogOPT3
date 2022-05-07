@@ -43,19 +43,16 @@ public class AccountMethoden {
         if (a == 6) {
             check = true;
             for (int i = 0; i < 4; i++) {
-                char ch = Postcode.charAt(i);
-                if (!(Character.isDigit(Postcode.charAt(i)))) ;
+                if ((Character.isLetter(Postcode.charAt(i))))
                 {
                     check = false;
                 }
             }
             for (int i = 4; i < 6; i++) {
-                char ch = Postcode.charAt(i);
-                if (!Character.isDigit(ch)) ;
+                if (Character.isDigit(Postcode.charAt(i)))
                 {
-                    //check = false;
+                    check = false;
                     //5555xx
-                    //012345
                 }
             }
         }

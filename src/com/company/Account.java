@@ -17,23 +17,23 @@ public class Account implements IAccount
         this.PassWord = passWord;
         this.Filiaal = Filiaal;
     }
-
+    @Override
     public int getLeeftijd() {
         return Leeftijd;
     }
-
+    @Override
     public void setLeeftijd(int leeftijd) {
         Leeftijd = leeftijd;
     }
-
+    @Override
     public String getSoortMedewerker() {
         return SoortMedewerker;
     }
-
+    @Override
     public void setSoortMedewerker(String soortMedewerker) {
         SoortMedewerker = soortMedewerker;
-    }
 
+    }
 
     @Override
     public String GetUserName() {

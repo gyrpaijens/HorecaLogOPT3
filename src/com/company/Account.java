@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.ArrayList;
 
-public class Account implements IAccount
+public class Account implements IPassword,ILeeftijd,IMedewerker
 {
     private String UserName;
     private String PassWord;

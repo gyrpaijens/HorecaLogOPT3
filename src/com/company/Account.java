@@ -32,7 +32,6 @@ public class Account implements IPassword,ILeeftijd,IMedewerker
     @Override
     public void setSoortMedewerker(String soortMedewerker) {
         SoortMedewerker = soortMedewerker;
-
     }
 
     @Override

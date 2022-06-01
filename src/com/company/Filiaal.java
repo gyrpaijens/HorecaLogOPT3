@@ -6,10 +6,17 @@ public class Filiaal {
     private String Naam;
     private String Postcode;
     private String Nummer;
+    private ArrayList<IMedewerker> Medewerkers;
 
     Filiaal(String Naam)
     {
         this.Naam = Naam;
+        this.Medewerkers = new ArrayList<IMedewerker>();
+    }
+
+    public void AddMedewerker (IMedewerker medewerker)
+    {
+        Medewerkers.add(medewerker);
     }
 
     public String getNaam() {
@@ -21,7 +28,9 @@ public class Filiaal {
     }
 
     public void setPostcode(String postcode) {
-        Postcode = postcode;
+        if (AccountMethoden.checkPostcode(Postcode)) {
+            this.Postcode = postcode;
+        }
     }
 
     public String getNummer() {

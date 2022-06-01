@@ -1,22 +1,22 @@
 package com.company;
 
-import java.util.ArrayList;
+import com.company.Interfaces.IAccount;
 
-public class Account implements IPassword,ILeeftijd,IMedewerker
-{
+public class AccountAdmin implements IAccount {
     private String UserName;
     private String PassWord;
-    private String Filiaal;
+    private Filiaal Filiaal;
     private String SoortMedewerker;
     private int Leeftijd;
     public boolean ingelogd;
 
-    public Account(String userName, String passWord, String Filiaal)
+    public AccountAdmin(String userName, String passWord, Filiaal Filiaal)
     {
         this.UserName = userName;
         this.PassWord = passWord;
         this.Filiaal = Filiaal;
     }
+
     @Override
     public int getLeeftijd() {
         return Leeftijd;
@@ -45,8 +45,13 @@ public class Account implements IPassword,ILeeftijd,IMedewerker
     }
 
     @Override
-    public String GetFiliaal() {
+    public Filiaal GetFiliaal() {
         return Filiaal;
+    }
+
+    public void printDetials()
+    {
+        //print details
     }
 
 }

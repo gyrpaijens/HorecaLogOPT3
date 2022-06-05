@@ -25,6 +25,7 @@ public class Main {
 
         Kosten kostenInkoop = new KostenPersoneel( 12,"A");
         kostenInkoop.check();
+        //test
 
     }
 }

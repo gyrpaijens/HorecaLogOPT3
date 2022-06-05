@@ -3,30 +3,55 @@ package com.company;
 public class KostenPersoneel extends Kosten
 {
     private double Dagloon;
-    private double Naam;
-    KostenPersoneel(double Dagloon, String Naams)
+    private String Naam;
+    private boolean geldig;
+    public KostenPersoneel(double Dagloon, String Naam)
     {
         this.Dagloon = Dagloon;
         this.Naam = Naam;
-        printDetails();
     }
 
     @Override
-    boolean isPersoneel() {
-        return false;
+    public boolean isPersoneel() {
+        return true;
     }
 
     @Override
-    double getPrijs() {
+    public double getPrijs() {
         return 0;
     }
 
     @Override
-    double getDagloon() {
+    public double getDagloon() {
         return Dagloon;
     }
     @Override
-    void printDetails() {
+    public void printDetails() {
         System.out.println(Naam + ": " + Dagloon);
+        if(geldig)
+        {
+            System.out.println("De ingevulde dagloon klopt.");
+        }
+        else
+        {
+            System.out.println("De ingevulde dagloon klopt niet.");
+        }
+    }
+
+    @Override
+    public void checkKosten() {
+        //methode wordt niet gebruikt.
+    }
+
+    @Override
+    public void checkDagLoon() {
+        if(Dagloon > 0 && Dagloon < 1000)
+        {
+            geldig = true;
+        }
+        else
+        {
+            geldig = false;
+        }
     }
 }

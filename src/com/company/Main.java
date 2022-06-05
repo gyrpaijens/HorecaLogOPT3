@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-        Filiaal filiaal = new Filiaal("Delft");
+        /*Filiaal filiaal = new Filiaal("Delft");
         ArrayList<IAccount> accounts = new ArrayList<IAccount>();
         accounts.add(new AccountAdmin("Gyr", "123", filiaal));
         accounts.add(new AccountAdmin("Jan", "123", filiaal));
@@ -21,6 +21,10 @@ public class Main {
         }
 
         System.out.println(filiaal.getMedewerker().get(5).GetUserName());
+        */
+
+        Kosten kostenInkoop = new KostenPersoneel( 12,"A");
+        kostenInkoop.check();
 
     }
 }

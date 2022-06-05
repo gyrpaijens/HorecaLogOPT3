@@ -2,19 +2,33 @@ package com.company;
 
 public abstract class Kosten
 {
-    final void getKosten()
+    public final void check()
     {
         if (isPersoneel())
         {
-            getDagloon();
+            checkDagLoon();
         }
         else{
-            getPrijs();
+            checkKosten();
+        }
+        printDetails();
+    }
+
+    public final double getKosten()
+    {
+        if (isPersoneel())
+        {
+            return getDagloon();
+        }
+        else{
+            return getPrijs();
         }
     }
 
     abstract double getPrijs();
     abstract double getDagloon();
+    abstract void checkKosten();
+    abstract void checkDagLoon();
     abstract void printDetails();
     boolean isPersoneel(){ return false; }
 }

@@ -41,6 +41,7 @@ public class AccountMedewerker
     {
         this.dagLoon = dagLoon;
     }
+    public double pakDagLoon(){return dagLoon; }
 
     public void bekijkRooster()
     {

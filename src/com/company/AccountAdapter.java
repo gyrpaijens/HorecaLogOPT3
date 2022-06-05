@@ -5,7 +5,7 @@ import com.company.Interfaces.IAccount;
 public class AccountAdapter implements IAccount
 {
 
-    AccountMedewerker account;
+    public AccountMedewerker account;
     public AccountAdapter(AccountMedewerker account)
     {
         this.account = account;
@@ -49,6 +49,15 @@ public class AccountAdapter implements IAccount
     @Override
     public void setSoortMedewerker(String soortMedewerker) {
         account.zetSoortMedewerker(soortMedewerker);
+    }
+
+    public void setDagLoon(double dagloon)
+    {
+        account.zetDagLoon(dagloon);
+    }
+    public double getDagLoon()
+    {
+        return account.pakDagLoon();
     }
 
     @Override

@@ -39,7 +39,8 @@ public class KostenPersoneel extends Kosten
     }
 
     @Override
-    public void checkKosten() {
+    public void checkKosten()
+    {
         //methode wordt niet gebruikt.
     }
 

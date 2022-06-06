@@ -22,10 +22,8 @@ public class Main {
 
         System.out.println(filiaal.getMedewerker().get(5).GetUserName());
         */
-
         Kosten kostenInkoop = new KostenPersoneel( 12,"A");
         kostenInkoop.check();
         //test
-
     }
 }

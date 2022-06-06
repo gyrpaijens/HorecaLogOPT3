@@ -1,12 +1,16 @@
 package com.company;
 
+import com.company.Interfaces.IAccount;
+
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class AccountMethoden {
-    public static AccountAdmin logIn(String gebruikersnaam, String wachtwoord, ArrayList<AccountAdmin> accounts) {
-        AccountAdmin account;
-        for (AccountAdmin a : accounts) {
-            if (a.GetUserName().equals(gebruikersnaam) && (a.GetPassword().equals(wachtwoord) || a.ingelogd == true)) {
+    public static IAccount logIn(String gebruikersnaam, String wachtwoord, ArrayList<IAccount> accounts) {
+        IAccount account;
+        for (IAccount a : accounts) {
+            if (a.GetUserName().equals(gebruikersnaam) && (a.GetPassword().equals(wachtwoord))) {
                 account = a;
                 return a;
             }
@@ -57,6 +61,48 @@ public class AccountMethoden {
             }
         }
         return check;
+    }
+
+    public static void printAlleGegevens(IAccount account)
+    {
+        if(account instanceof AccountAdmin) {
+        ArrayList<Dag> omzet = account.GetFiliaal().getDagen();
+        for(Dag dagen : omzet)
+            {
+                System.out.println("Gegevens van dag " + dagen.getDag().get(Calendar.DAY_OF_MONTH)
+                        + " / " + dagen.getDag().get(Calendar.MONTH) + " / " + dagen.getDag().get(Calendar.YEAR));
+                System.out.println("Omzet: " + dagen.getOmzet());
+                System.out.println("Kosten: " + dagen.getKosten());
+                System.out.println(("Verschil: "  + dagen.getVerschil()));
+            }
+        }
+        else{
+            System.out.println("U heeft hier geen recht op.");
+        }
+    }
+    public static void kostenBekijken(IAccount account)
+    {
+        Filiaal filiaal = account.GetFiliaal();
+        ArrayList<Dag> dagen = filiaal.getDagen();
+        for (Dag dag : dagen) {
+            System.out.println("De kosten van " + dag.getDag().toString());
+            for (Kosten kosten : dag.getInkopen()) {
+                System.out.println("Uitgave: " + kosten.getPrijs());
+            }
+            System.out.println("De totale kosten zijn: " + dag.getKosten());
+        }
+
+    }
+    public static void loonBekijken(IAccount account)
+    {
+        if(account instanceof AccountAdapter)
+        {
+            AccountAdapter account1 = (AccountAdapter) account;
+            System.out.println("Uw dagloon is: "+ account1.getDagLoon());
+        }
+        else{
+            System.out.println("Als admin is geen dagloon bekend.");
+        }
     }
 }
 

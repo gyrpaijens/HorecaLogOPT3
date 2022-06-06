@@ -50,6 +50,11 @@ public class Filiaal implements IFiliaal, IAdres {
         }
     }
 
+    public ArrayList<Dag> getDagen()
+    {
+        return dagen;
+    }
+
     public String getNummer() {
         return Nummer;
     }

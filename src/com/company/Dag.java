@@ -39,7 +39,12 @@ public class Dag {
     }
 
     public double getKosten() {
-        return Kosten;
+        double totaal = 0;
+        for(Kosten kosten : Inkopen)
+        {
+            totaal += kosten.getPrijs();
+        }
+        return totaal;
     }
 
     public double getOmzet() {

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class JUnitTesten
 {
     AccountAdmin account = new AccountAdmin("gyr","wachtwoord",new Filiaal("a"));
-
+    /*
     // 1e rij MC/DC
     @Test
     public void testLogin1()
@@ -72,6 +72,7 @@ public class JUnitTesten
         AccountAdmin actueel = AccountMethoden.logIn("nietgyr","foutwachtwoord", accounts );
         Assert.assertNull(actueel);
     }
+    */
     @Test
     public void testRechten()
     {

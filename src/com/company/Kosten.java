@@ -25,11 +25,11 @@ public abstract class Kosten
         }
     }
 
-    abstract double getPrijs();
-    abstract double getDagloon();
-    abstract void checkKosten();
-    abstract void checkDagLoon();
-    abstract void printDetails();
-    boolean isPersoneel(){ return false; }
+    public abstract double getPrijs();
+    public abstract double getDagloon();
+    public abstract void checkKosten();
+    public abstract void checkDagLoon();
+    public abstract void printDetails();
+    public boolean isPersoneel(){ return false; }
 }
 

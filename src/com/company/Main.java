@@ -10,7 +10,9 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+
         ArrayList<IAccount> accounts = voorbeeldAccounts();
+        //voorbeeld wat dan in het database zou staan^
         IAccount account = logIn(accounts);
         menu(account);
 
@@ -20,6 +22,7 @@ public class Main {
         Kosten kostenInkoop = new KostenPersoneel( 12,"A");
         kostenInkoop.check();
         */
+
     }
 
     public static IAccount logIn(ArrayList<IAccount> accounts)

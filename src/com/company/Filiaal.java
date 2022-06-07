@@ -40,6 +40,7 @@ public class Filiaal implements IFiliaal, IAdres {
         return Medewerkers;
     }
 
+
     public String getPostcode() {
         return Postcode;
     }

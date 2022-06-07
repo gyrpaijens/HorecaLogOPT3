@@ -6,72 +6,73 @@ import org.junit.Test;
 import java.util.ArrayList;
 public class JUnitTesten
 {
-    Account account = new Account("gyr","wachtwoord","test");
-
+    AccountAdmin account = new AccountAdmin("gyr","wachtwoord",new Filiaal("a"));
+    /*
     // 1e rij MC/DC
     @Test
     public void testLogin1()
     {
-        ArrayList<Account> accounts = new ArrayList<Account>();
+        ArrayList<AccountAdmin> accounts = new ArrayList<AccountAdmin>();
         account.ingelogd = true;
         accounts.add(account);
-        Account verwacht = account;
-        Account actueel = AccountMethoden.logIn("gyr","wachtwoord", accounts );
+        AccountAdmin verwacht = account;
+        AccountAdmin actueel = AccountMethoden.logIn("gyr","wachtwoord", accounts );
         Assert.assertEquals(verwacht, actueel);
     }
     // 2e rij MC/DC
     @Test
     public void testLogin2()
     {
-        ArrayList<Account> accounts = new ArrayList<Account>();
+        ArrayList<AccountAdmin> accounts = new ArrayList<AccountAdmin>();
         account.ingelogd = false;
         accounts.add(account);
-        Account verwacht = account;
-        Account actueel = AccountMethoden.logIn("gyr","wachtwoord", accounts );
+        AccountAdmin verwacht = account;
+        AccountAdmin actueel = AccountMethoden.logIn("gyr","wachtwoord", accounts );
         Assert.assertEquals(verwacht, actueel);
     }
     // 3e rij MC/DC
     @Test
     public void testLogin3()
     {
-        ArrayList<Account> accounts = new ArrayList<Account>();
+        ArrayList<AccountAdmin> accounts = new ArrayList<AccountAdmin>();
         account.ingelogd = false;
         accounts.add(account);
-        Account actueel1 = AccountMethoden.logIn("gyr","foutiefwachtwoord", accounts );
+        AccountAdmin actueel1 = AccountMethoden.logIn("gyr","foutiefwachtwoord", accounts );
         Assert.assertNull(actueel1);
     }
     // 4e rij MC/DC
     @Test
     public void testLogin4()
     {
-        ArrayList<Account> accounts = new ArrayList<Account>();
+        ArrayList<AccountAdmin> accounts = new ArrayList<AccountAdmin>();
         account.ingelogd = true;
         accounts.add(account);
-        Account verwacht = account;
-        Account actueel = AccountMethoden.logIn("nietgyr","foutwachtwoord", accounts );
+        AccountAdmin verwacht = account;
+        AccountAdmin actueel = AccountMethoden.logIn("nietgyr","foutwachtwoord", accounts );
         Assert.assertNull(actueel);
     }
     //5e rij MC/DC
     @Test
     public void testLogin5()
     {
-        ArrayList<Account> accounts = new ArrayList<Account>();
+        ArrayList<AccountAdmin> accounts = new ArrayList<AccountAdmin>();
         account.ingelogd = true;
         accounts.add(account);
-        Account verwacht = account;
-        Account actueel = AccountMethoden.logIn("gyr","foutwachtwoord", accounts );
+        AccountAdmin verwacht = account;
+        AccountAdmin actueel = AccountMethoden.logIn("gyr","foutwachtwoord", accounts );
         Assert.assertEquals(verwacht, actueel);
     }
     //6e rij MC/DC
     @Test
     public void testLogin6()
     {
-        ArrayList<Account> accounts = new ArrayList<Account>();
+        ArrayList<AccountAdmin> accounts = new ArrayList<AccountAdmin>();
         account.ingelogd = true;
         accounts.add(account);
-        Account actueel = AccountMethoden.logIn("nietgyr","foutwachtwoord", accounts );
+        AccountAdmin actueel = AccountMethoden.logIn("nietgyr","foutwachtwoord", accounts );
         Assert.assertNull(actueel);
     }
+    */
     @Test
     public void testRechten()
     {

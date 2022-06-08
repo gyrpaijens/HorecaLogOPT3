@@ -6,4 +6,6 @@ public interface IAdres
     public void setPostcode(String postcode);
     public String getNummer();
     public void setNummer(String nummer);
+    public String getStad();
+    public void setStad(String stad);
 }

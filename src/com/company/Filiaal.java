@@ -6,12 +6,13 @@ import com.company.Interfaces.IFiliaal;
 
 import java.util.ArrayList;
 
-public class Filiaal implements IFiliaal, IAdres {
+public class Filiaal implements IFiliaal{
     private String Naam;
     private String Postcode;
     private String Nummer;
     private ArrayList<IAccount> Medewerkers;
     private ArrayList<Dag> dagen;
+    private Adres adres;
 
     Filiaal(String Naam)
     {
@@ -40,27 +41,16 @@ public class Filiaal implements IFiliaal, IAdres {
         return Medewerkers;
     }
 
-
-    public String getPostcode() {
-        return Postcode;
-    }
-
-    public void setPostcode(String postcode) {
-        if (AccountMethoden.checkPostcode(Postcode)) {
-            this.Postcode = postcode;
-        }
-    }
-
     public ArrayList<Dag> getDagen()
     {
         return dagen;
     }
 
-    public String getNummer() {
-        return Nummer;
+    public Adres getAdres() {
+        return adres;
     }
 
-    public void setNummer(String nummer) {
-        Nummer = nummer;
+    public void setAdres(Adres adres) {
+        this.adres = adres;
     }
 }

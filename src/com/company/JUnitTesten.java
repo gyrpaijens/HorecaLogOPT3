@@ -96,7 +96,7 @@ public class JUnitTesten
     @Test
     public void testPostcode()
     {
-        Assert.assertFalse(AccountMethoden.checkPostcode("261314SG"));
+    Assert.assertFalse(AccountMethoden.checkPostcode("26131a4SG"));
         Assert.assertTrue(AccountMethoden.checkPostcode("2611AB"));
 
         Assert.assertFalse(AccountMethoden.checkPostcode("ABCDEF"));

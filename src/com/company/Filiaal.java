@@ -8,8 +8,6 @@ import java.util.ArrayList;
 
 public class Filiaal implements IFiliaal{
     private String Naam;
-    private String Postcode;
-    private String Nummer;
     private ArrayList<IAccount> Medewerkers;
     private ArrayList<Dag> dagen;
     private Adres adres;

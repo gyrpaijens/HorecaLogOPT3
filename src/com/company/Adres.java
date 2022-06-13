@@ -5,6 +5,7 @@ import com.company.Interfaces.IAdres;
 public class Adres implements IAdres
 {
     private String postcode;
+    // nummer is een string omdat huisnummers ook soms letters bevatten.
     private String nummer;
     private String stad;
 

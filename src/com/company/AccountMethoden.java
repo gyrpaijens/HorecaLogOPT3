@@ -18,28 +18,6 @@ public class AccountMethoden {
         return null;
     }
 
-    public static AccountAdmin aanmakenRechten(AccountAdmin account, String Soort, int leeftijd, boolean bsn, boolean Geboortedatum) {
-        if (Geboortedatum && bsn) {
-            if (leeftijd > 17 && (Soort.equals("Manager") || Soort.equals("Eigenaar"))) {
-                account.setLeeftijd(leeftijd);
-                account.setSoortMedewerker(Soort);
-                return account;
-            }
-
-            if (leeftijd < 18 && (Soort.equals("Manager") || Soort.equals("Eigenaar"))) {
-                return null;
-            }
-            if (leeftijd > 14 && Soort.equals("Medewerker")) {
-                account.setLeeftijd(leeftijd);
-                account.setSoortMedewerker(Soort);
-                return account;
-            }
-            return null;
-        } else {
-            return null;
-        }
-    }
-
     public static boolean checkPostcode(String Postcode) {
         boolean check = false;
         int a = Postcode.length();

@@ -77,4 +77,54 @@ public class JUnitTesten
         Assert.assertFalse(AccountMethoden.checkPostcode("123456"));
         Assert.assertTrue(AccountMethoden.checkPostcode("5246NL"));
     }
+    @Test
+    public void testWinstBelasting()
+    {
+        double test1 = AccountMethoden.berekenWinstBelasting(1);
+        double test1Verwacht = 1 * 0.2;
+        Assert.assertEquals(test1Verwacht,test1,0.0001);
+
+        double test2 = AccountMethoden.berekenWinstBelasting(50000);
+        double test2Verwacht = 50000 * 0.2;
+        Assert.assertEquals(test2Verwacht,test2,0.0001);
+
+        double test3 = AccountMethoden.berekenWinstBelasting(50001);
+        double test3Verwacht = 50000 * 0.2 + 1 * 0.25;
+        Assert.assertEquals(test3Verwacht,test3,0.0001);
+
+        double test4 = AccountMethoden.berekenWinstBelasting(100000);
+        double test4Verwacht = 50000 * 0.2 + 50000 * 0.25;
+        Assert.assertEquals(test4Verwacht,test4,0.0001);
+
+        double test5 = AccountMethoden.berekenWinstBelasting(100001);
+        double test5Verwacht = 50000 * 0.2 + 50000 * 0.25 + 1 * 0.3;
+        Assert.assertEquals(test5Verwacht,test5,0.0001);
+
+        double test6 = AccountMethoden.berekenWinstBelasting(100002);
+        double test6Verwacht = 50000 * 0.2 + 50000 * 0.25 + 2 * 0.3;
+        Assert.assertEquals(test6Verwacht,test6,0.0001);
+    }
+
+
+    @Test
+    public void testDagloon()
+    {
+        double test1 = AccountMethoden.berekenDagloon(17, false, 0, false);
+        Assert.assertEquals(40,test1, 0.0001);
+
+        double test2 = AccountMethoden.berekenDagloon(17, true, 2, true);
+        Assert.assertEquals(80,test2, 0.0001);
+
+        double test3 = AccountMethoden.berekenDagloon(18, false, 2, true);
+        Assert.assertEquals(80,test3, 0.0001);
+
+        double test4 = AccountMethoden.berekenDagloon(18, true, 0, false);
+        Assert.assertEquals(60,test4, 0.0001);
+
+        double test5 = AccountMethoden.berekenDagloon(21, false, 2, false);
+        Assert.assertEquals(70,test5, 0.0001);
+
+        double test6 = AccountMethoden.berekenDagloon(21, true, 0, true);
+        Assert.assertEquals(90,test6, 0.0001);
+    }
 }

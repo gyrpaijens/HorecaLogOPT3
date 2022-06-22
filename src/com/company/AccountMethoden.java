@@ -82,5 +82,36 @@ public class AccountMethoden {
             System.out.println("Als admin is geen dagloon bekend.");
         }
     }
+
+    public static double berekenWinstBelasting(double winst)
+    {
+        double winstBelasting;
+        if(winst > 0 && winst<= 50000)
+        {
+            return winst * 0.2;
+        }
+        if(winst > 50000 && winst<= 100000)
+        {
+            return 50000 * 0.2 + (winst - 50000) * 0.25;
+        }
+        if(winst > 100000)
+        {
+            return 50000 * 0.2 + 50000 * 0.25 + (winst - 100000) * 0.3;
+        }
+        return 0;
+    }
+    public static double berekenDagloon(int leeftijd, boolean horecaEarvaring,
+    int tijdInDienst, boolean teamLeider)
+    {
+        int dagLoon = 40;
+        if(leeftijd > 17 && leeftijd < 21) dagLoon+=10;
+        if(leeftijd > 20) dagLoon+=20;
+        if (tijdInDienst > 1) dagLoon +=10;
+        if(horecaEarvaring) dagLoon += 10;
+        if(teamLeider) dagLoon += 20;
+        return (double) dagLoon;
+    }
+
 }
+
 

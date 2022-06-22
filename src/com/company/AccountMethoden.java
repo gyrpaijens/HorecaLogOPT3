@@ -8,11 +8,14 @@ import java.util.Calendar;
 
 public class AccountMethoden {
     public static IAccount logIn(String gebruikersnaam, String wachtwoord, ArrayList<IAccount> accounts) {
-        IAccount account;
-        for (IAccount a : accounts) {
-            if (a.GetUserName().equals(gebruikersnaam) && (a.GetPassword().equals(wachtwoord))) {
-                account = a;
-                return a;
+        AccountAdmin account;
+        for (IAccount a : accounts)
+        {
+            if(a instanceof AccountAdmin);
+            AccountAdmin acc = (AccountAdmin) a;
+            if (acc.GetUserName().equals(gebruikersnaam) && (acc.GetPassword().equals(wachtwoord) || acc.ingelogd == true))
+            {
+                return acc;
             }
         }
         return null;
